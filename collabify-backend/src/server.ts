@@ -1,14 +1,12 @@
 import mongoose from 'mongoose';
 import app from './app';
 import dotenv from 'dotenv';
+import { env } from './config/env';
 
-dotenv.config();
-
-const PORT = process.env.PORT || 5000;
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/collabify';
+const PORT = env.port || 5000;
 
 mongoose
-  .connect(MONGODB_URI)
+  .connect(env.mongoURI)
   .then(() => {
     console.log('Connected to MongoDB');
     app.listen(PORT, () => {
