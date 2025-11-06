@@ -1,6 +1,5 @@
 import mongoose from 'mongoose';
 import app from './app';
-import dotenv from 'dotenv';
 import { env } from './config/env';
 
 const PORT = env.port || 5000;
